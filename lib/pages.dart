@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wokkinWidget/Screens/profile.dart';
-import 'package:wokkinWidget/Widgets/activity.dart';
 import 'package:wokkinWidget/Widgets/sales_card.dart';
-import 'package:wokkinWidget/Widgets/specs.dart';
+import 'package:wokkinWidget/Widgets/specifications.dart';
 
 class Pages extends StatelessWidget {
   @override

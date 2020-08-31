@@ -9,6 +9,7 @@ class Profile extends StatelessWidget {
     var media = MediaQuery.of(context).size;
     return Scaffold(
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
@@ -16,22 +17,24 @@ class Profile extends StatelessWidget {
             height: media.height * .45,
             color: Colors.blueAccent,
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    IconButton(
-                      icon: Icon(Icons.arrow_back),
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                    ),
-                    IconButton(
-                      icon: Icon(Icons.more_vert),
-                      onPressed: () {},
-                    )
-                  ],
+                Container(
+                  padding: EdgeInsets.symmetric(vertical: 10.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      IconButton(
+                        icon: Icon(Icons.arrow_back),
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                      ),
+                      IconButton(
+                        icon: Icon(Icons.more_vert),
+                        onPressed: () {},
+                      )
+                    ],
+                  ),
                 ),
                 Stack(
                   children: [
@@ -49,6 +52,7 @@ class Profile extends StatelessWidget {
                           child: Icon(
                             Icons.camera_alt,
                             color: Colors.black,
+                            size: 30,
                           ),
                         ),
                       ),
@@ -72,7 +76,7 @@ class Profile extends StatelessWidget {
           Container(
             margin: EdgeInsets.only(left: 10.0, top: 10.0, bottom: 10),
             child: Text(
-              "Activities",
+              "Activity",
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
             ),
           ),
