@@ -10,6 +10,7 @@ class SalesPage extends StatelessWidget {
     var iconHeight = media.height * .26;
     var iconWidth = media.width * .38;
     return Scaffold(
+      backgroundColor: Color(0xffcdcdcd),
       body: ListView.builder(
         itemBuilder: (BuildContext context, int index) => Container(
           height: MediaQuery.of(context).size.height * .35,
@@ -91,18 +92,22 @@ class SalesPage extends StatelessWidget {
                           style: TextStyle(color: Colors.red),
                         ),
                       ),
-                      Row(
-                        children: [
-                          Container(
-                            child: Image.network(images[0]),
-                            height: 100,
-                            width: 100,
+                      Expanded(
+                        child: Container(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Container(
+                                  width: 60,
+                                  height: 60,
+                                  child: Image.network(images[0])),
+                              Container(
+                                  height: 60,
+                                  width: 60,
+                                  child: Image.network(images[1]))
+                            ],
                           ),
-                          Container(
-                              height: 100,
-                              width: 100,
-                              child: Image.network(images[1]))
-                        ],
+                        ),
                       ),
                       Row(
                         children: [
@@ -113,11 +118,15 @@ class SalesPage extends StatelessWidget {
                               color: Colors.black12,
                             ),
                           ),
-                          Text(
-                            "Zooler Official Store",
-                            maxLines: 2,
-                            overflow: TextOverflow.ellipsis,
-                            style: TextStyle(fontWeight: FontWeight.bold),
+                          Expanded(
+                            child: Container(
+                              child: Text(
+                                "Zooler Official Store",
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                            ),
                           )
                         ],
                       )
